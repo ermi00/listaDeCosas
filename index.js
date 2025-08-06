@@ -1,18 +1,33 @@
-let input = document.getElementById("input")
+let input = document.getElementById("input");
 let ul = document.getElementById("ul");
-let contador = 0
 
 function agregarElemento() {
-  let li = document.createElement("li")
-  let nombreTarea = input.value
-  contador++
-  li.id = contador
-  li.innerHTML = `${nombreTarea} <button onclick="eliminarElemento(${li.id})">quitar</button>`;
-  ul.appendChild(li);
+  let li = document.createElement("li");
+  let nombreTarea = input.value;
+
+  if (nombreTarea == "") {
+    alert("Ingresa una tarea antes");
+    return;
+  } else {
+    li.id = Math.random();
+    li.innerHTML = `${nombreTarea} <button onclick="eliminarElemento(${li.id})">quitar</button>`;
+    ul.appendChild(li);
+    localStorage.setItem(`${li.id}`, `${nombreTarea}`);
+  }
 }
 
-function eliminarElemento(id){
-  let li = document.getElementById(`${id}`)
+function eliminarElemento(id) {
+  let li = document.getElementById(`${id}`);
+  li.remove();
+  localStorage.removeItem(id);
+}
 
-  li.remove()
+for (let i = 0; i < localStorage.length; i++) {
+  let id = localStorage.key(i);
+  let nombre = localStorage.getItem(id);
+
+  let li = document.createElement("li");
+  li.id = id;
+  li.innerHTML = `${nombre} <button onclick="eliminarElemento(${li.id})">quitar</button>`;
+  ul.appendChild(li);
 }
