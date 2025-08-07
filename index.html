@@ -7,15 +7,18 @@
     <link rel="stylesheet" href="./style.css">
     <title>Inicio</title>
 </head>
+
 <body>
-    <h1>Lista de tareas</h1>
-    <div>
-        <input id="input" type="text" placeholder="Ingresa una tarea">
-        <button onclick="agregarElemento()">Agregar</button>
+    <h1>LISTA</h1>
+    <span id="span">...</span>
+    <div class="divPrincipal">
+        <form action="">
+            <input id="input" type="text" placeholder="Escribe algo para recordar">
+            <button type="submit" onclick="agregarElemento();">AGREGAR</button>
+        </form>
+        <div id="divContenido">
+        </div>
     </div>
-    <ul id="ul">
-    </ul>
-    <div></div>
 </body>
 <script src="./index.js"></script>
 

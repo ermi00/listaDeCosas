@@ -1,23 +1,80 @@
 body {
-    font-family: monospace;
+    font-family: Helvetica, sans-serif;
+    margin-top: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10%;
+    background-color: #2e2e2e;
+    color: white;
 }
 
-input{
+input {
+    padding: 10px;
+    width: 181px;
+    transform: translateY(-2px);
+}
+
+button {
+    padding: 10px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    border: none;
+    transform: translateY(-2px);
+}
+
+button:active{
+    transform: translateY(0px);
+}
+
+button:hover{
+    color: red;
+}
+
+li {
+    margin: 5px;
+}
+
+p {
+    width: 194px;
+    margin: 0px;
+}
+
+.divGenerico{
+    display: flex;
+    align-items: center;
+}
+
+.divGenerico p{
+    padding: 20px;
+    padding-left: 0px;
+}
+
+#visitasPagina{
+    display: none;
+}
+
+h1{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-bottom: 5px;
+}
+
+span{
+    margin-bottom: 30px;
     padding: 10px;
 }
 
-button{
-    padding: 10px;
-}
+@media screen and (max-width: 329px){
+    input{
+        width: 148px;
+    }
 
-ul{
-    list-style: none;
-}
+    p{
+        width: 160px;
+    }
 
-li{
-    margin: 5px
 }
