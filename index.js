@@ -52,3 +52,4 @@ for (
 
 visitas++;
 localStorage.setItem("visitasPagina", visitas);
+span.innerHTML = `Parece que has estado aqui ${visitas} veces`;
